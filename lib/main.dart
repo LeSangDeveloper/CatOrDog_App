@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tflite_flutter/tflite_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,8 +40,12 @@ class PredictionPage extends StatefulWidget {
 }
 
 class _PredictionPageState extends State<PredictionPage> {
+  late Interpreter interpreter;
+
   @override
   Widget build(BuildContext context) {
+
+    loadModel();
 
     return Scaffold(
         appBar: AppBar(
@@ -59,6 +64,12 @@ class _PredictionPageState extends State<PredictionPage> {
       ),
     );
   }
+
+  Future loadModel() async {
+    interpreter = await Interpreter.fromAsset('model_catdog.tflite');
+    debugPrint(interpreter.toString());
+  }
+
 }
 
 // class MyHomePage extends StatefulWidget {
