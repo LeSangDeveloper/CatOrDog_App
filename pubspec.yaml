@@ -37,6 +37,11 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   tflite_flutter: ^0.9.0
+  image_picker: ^0.8.6
+  tflite_flutter_helper:
+    git:
+      url: https://github.com/elephantum/tflite_flutter_helper.git
+      ref: a7d7a59a33f7cffa0a2a12ab05625807622cc97a
 
 dev_dependencies:
   flutter_test:
