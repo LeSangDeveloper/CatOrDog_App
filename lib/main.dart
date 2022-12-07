@@ -113,9 +113,9 @@ class _PredictionPageState extends State<PredictionPage> {
     interpreter.run(tensorImage.buffer, output);
     debugPrint(output.toString());
     if (output[0][0] > output[0][1]) {
-      _classificationResult = "Dog";
-    } else {
       _classificationResult = "Cat";
+    } else {
+      _classificationResult = "Dog";
     }
   }
 
